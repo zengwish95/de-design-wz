@@ -1,0 +1,29 @@
+html {
+  font-size: 20px;
+  background-color: #dedede;
+  font-family: helvetica, sans-serif;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+.FollowBtn {
+	background-color: #474747;
+  border: none;
+  color: white;
+  padding: 1rem 2.5rem;
+  text-align: center;
+  text-decoration: none;
+	width: 300px;
+  display: block;
+	border-radius: 0.25rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+	margin: 40vh auto;
+  -webkit-transition-duration: 0.5s; /* Safari */
+  transition-duration: 0.5s;
+}
+.FollowBtn:hover {
+  background-color: #0030ff;
+  color: white;
+}

@@ -1,4 +1,3 @@
-var btn = document.getElementById("btn");
 document.addEventListener("mousemove", getMouse);
 
 var btnpos = {x:0, y:0};
@@ -23,4 +22,16 @@ function followMouse(){
 
  btn.style.left = btnpos.x + "px";
  btn.style.top = btnpos.y + "px";
+}
+
+//gernate random number
+function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+
+function getNumber() {
+  var number1 = getRndInteger(1, 9);
+  var number2 = getRndInteger(100, 999);
+  var number3 = (number1 + "," + number2);
+  document.getElementById("displayNumber").innerHTML = number3;
 }

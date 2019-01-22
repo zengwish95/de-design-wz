@@ -6,6 +6,9 @@ setInterval(followMouse, 40);
 
 var mouse = {x:0, y:0}; //mouse.x, mouse.y
 
+//global variable:
+var currentNumber;
+
 function getMouse(e){
  mouse.x = e.pageX;
  mouse.y = e.pageY;
@@ -24,19 +27,37 @@ function followMouse(){
  btn.style.top = btnpos.y + "px";
 }
 
-//gernate random number
+
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
 
-function getNumber() {
-  var number1 = getRndInteger(1, 9);
-  var number2 = getRndInteger(100, 999);
-  var number3 = (number1 + "," + number2);
-  document.getElementById("displayNumber").innerHTML = number3;
+function getInitialNumber() {
+  currentNumber = getRndInteger (10, 9999);
+  document.getElementById("displayInitialNumber").innerHTML = currentNumber;
+}
+
+getInitialNumber();
+
+function addFollower() {
+  //conditional statement for exe:
+  if (currentNumber < 9999) {
+    currentNumber++;
+  } else { alert ("Enough is enough, don't be greedy.")} ;
+  document.getElementById("displayInitialNumber").innerHTML = currentNumber;
 }
 
 //set interval
 //function for subtract follower
 //function pick a random number to subtract from overall follower numbers
 //
+// function getRndInteger(min, max) {
+//   return Math.floor(Math.random() * (max - min + 1) ) + min;
+// }
+//
+// function getNumber() {
+//   var number1 = getRndInteger(1, 9);
+//   var number2 = getRndInteger(100, 999);
+//   var number3 = (number1 + "," + number2);
+//   document.getElementById("displayNumber").innerHTML = number3;
+// }

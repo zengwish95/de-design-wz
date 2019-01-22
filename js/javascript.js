@@ -2,7 +2,7 @@ document.addEventListener("mousemove", getMouse);
 
 var btnpos = {x:0, y:0};
 
-setInterval(followMouse, 40);
+setInterval(followMouse, 20);
 
 var mouse = {x:0, y:0}; //mouse.x, mouse.y
 
@@ -28,10 +28,12 @@ function followMouse(){
 }
 
 
+//generate random number for followers
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
 
+//get and display initial follower number:
 function getInitialNumber() {
   currentNumber = getRndInteger (10, 9999);
   document.getElementById("displayInitialNumber").innerHTML = currentNumber;
@@ -39,11 +41,40 @@ function getInitialNumber() {
 
 getInitialNumber();
 
+//decrease by random:
+var down = true;
+var floor = 0;
+var increment; //random value
+var randomTime; //random value
+
+//basic decrease function
+function numberDecrease() {
+  increment = getRndInteger (1, 4);
+  if (down == true && currentNumber >= floor) {
+    currentNumber -= increment
+    if (currentNumber == floor) {
+      down = false;
+    }
+      if (currentNumber < 9999) {
+        down = true;
+      }
+  }
+  document.getElementById('displayInitialNumber').innerHTML = currentNumber;
+}
+
+function timedDecrease() {
+  randomTime = getRndInteger (3500, 9000);
+  setInterval(numberDecrease, randomTime);
+}
+
+timedDecrease();
+
+//add 1 to initial number on click:
 function addFollower() {
   //conditional statement for exe:
   if (currentNumber < 9999) {
     currentNumber++;
-  } else { alert ("Enough is enough, don't be greedy.")} ;
+  } else { alert ("Enough is enough, don't be greedy!")} ;
   document.getElementById("displayInitialNumber").innerHTML = currentNumber;
 }
 

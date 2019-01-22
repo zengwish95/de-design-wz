@@ -28,7 +28,7 @@ h1 {
 }
 footer {
   text-align: center;
-  margin: auto;
+  margin: 50px auto;
   font-size: 1vw;
   font-family: system-ui, sans-serif;
   font-weight: 500;
@@ -66,4 +66,7 @@ a:hover {
 #btn:hover {
   background-color: white;
   color: #3897f0;
+}
+#btn:focus {
+  outline: none;
 }

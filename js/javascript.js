@@ -49,7 +49,7 @@ var randomTime; //random value
 
 //basic decrease function
 function numberDecrease() {
-  increment = getRndInteger (1, 4);
+  increment = getRndInteger (1, 3);
   if (down == true && currentNumber >= floor) {
     currentNumber -= increment
     if (currentNumber == floor) {
@@ -63,7 +63,7 @@ function numberDecrease() {
 }
 
 function timedDecrease() {
-  randomTime = getRndInteger (3500, 9000);
+  randomTime = getRndInteger (4000, 10000);
   setInterval(numberDecrease, randomTime);
 }
 
